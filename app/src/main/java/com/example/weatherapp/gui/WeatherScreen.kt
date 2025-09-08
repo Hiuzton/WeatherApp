@@ -36,6 +36,8 @@ fun WeatherScreen(vm: WeatherViewModel) {
                 Text("City", fontWeight = FontWeight.Bold, fontSize = 16.sp, modifier = Modifier.weight(1f))
                 Text("Min °C", fontWeight = FontWeight.Bold, fontSize = 16.sp, modifier = Modifier.weight(1f))
                 Text("Max °C", fontWeight = FontWeight.Bold, fontSize = 16.sp, modifier = Modifier.weight(1f))
+                Text("Humidity %", fontWeight = FontWeight.Bold, fontSize = 16.sp, modifier = Modifier.weight(1f))
+                Text("Wind Speed kph", fontWeight = FontWeight.Bold, fontSize = 16.sp, modifier = Modifier.weight(1f))
             }
 
             Spacer(Modifier.height(8.dp))
@@ -52,6 +54,8 @@ fun WeatherScreen(vm: WeatherViewModel) {
                         Text(itx.city, modifier = Modifier.weight(1f))
                         Text("${itx.minC}", modifier = Modifier.weight(1f))
                         Text("${itx.maxC}", modifier = Modifier.weight(1f))
+                        Text("${itx.humidity}", modifier = Modifier.weight(1f))
+                        Text("${itx.maxWindSpeedKph}", modifier = Modifier.weight(1f))
                     }
                 }
             }

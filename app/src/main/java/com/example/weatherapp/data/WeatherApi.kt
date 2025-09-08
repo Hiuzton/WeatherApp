@@ -10,7 +10,5 @@ interface WeatherApi {
         @Query("key") key: String,
         @Query("q") q: String,
         @Query("days") days: Int=2,
-        @Query("aqi") aqi: String = "no",
-        @Query("alerts") alerts: String="no"
     ): ForecastResponse
 }

@@ -8,14 +8,13 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-
 class WeatherViewModel(
     private val repo: WeatherRepository = WeatherRepository()
 ) : ViewModel() {
     private val _items = MutableStateFlow<List<CityWeatherUi>>(emptyList())
     val items: StateFlow<List<CityWeatherUi>> = _items
 
-    private val cities = mutableListOf("Chisinau", "Sibiu", "Bucharest")
+    private val cities = mutableListOf("Chisinau", "Kiev", "Amsterdam")
 
     fun load() {
         viewModelScope.launch {
@@ -23,7 +22,4 @@ class WeatherViewModel(
             _items.value = list
         }
     }
-
-    fun addCity(city: String) { if (city.isNotBlank()) { cities.add(city.trim()); load() } }
-    fun removeCity(city: String) { cities.remove(city); load() }
 }
